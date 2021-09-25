@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Linking, Image, ScrollView } from 'react-native';
-
 import { LinearGradient } from 'expo-linear-gradient';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
+import { WebView } from 'react-native-webview';
 
 
 import { Card } from 'react-native-paper';
 
 export default function Nurseries() {
-
+  
 
     return(
       <View style={styles.container}>
-        <LinearGradient
-          style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}
-          colors={['lavender', 'lavender', 'lavender','#C0CEC0']} >
-       <Text style={styles.title}>Local Nurseries</Text>
      
-        </LinearGradient>
+       <Text style={styles.title}>Local Nurseries</Text>
+       <WebView
+          style={styles.map}
+          source={{ uri: 'https://www.google.com/maps/d/embed?mid=1RR1PjOxcD58sR2RNuqPR5A7rXEW2dXSi&hl=en' }} />
+     
+
       </View>
     )
   
@@ -29,13 +29,15 @@ export default function Nurseries() {
     margin: 10,
     height: '100%',
     alignContent: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#C0CEC0'
    },
    title: {
     fontFamily: 'JuliusSansOne_400Regular',
     fontSize: 32,
     marginTop: 20,
     marginBottom: 20,
+    textAlign: 'center'
   
   },
   list: {
@@ -68,5 +70,12 @@ export default function Nurseries() {
     fontFamily: 'MontserratAlternates_400Regular',
 
   },
+
+  map: {
+    height: '50%',
+    width: '80%',
+    alignSelf: 'center',
+
+  }
   
 })
