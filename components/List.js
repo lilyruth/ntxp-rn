@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { SafeAreaView, TextInput, Text, View, StyleSheet, Linking, Image, ScrollView, Button } from 'react-native';
-import { Divider } from 'react-native-elements';
+import { SafeAreaView, TextInput, Text, View, StyleSheet, Share, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
-import { Card } from 'react-native-paper';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { addPlantToFavorites, removePlantFromFavorites } from '../redux/features/favorites';
-import { setStatusBarNetworkActivityIndicatorVisible } from 'expo-status-bar';
+import Separator from './Separator';
+
 
 export default function ShoppingList(props) {
 
@@ -28,6 +26,20 @@ export default function ShoppingList(props) {
   
    </View>
    )
+
+   
+
+const onShare = () => {
+ const sendingList = favoritesList.join(', ');
+ Share.share({
+  
+  message: `Take a look at my plants list! ${sendingList}`,
+  title: "Plants list"
+
+ })
+ 
+}
+
   console.log(plant)
 
   return(
@@ -49,6 +61,11 @@ export default function ShoppingList(props) {
       color="#708A70"
       onPress={() => {dispatch(addPlantToFavorites(plant)); onChangeText('') }  }></Button>
       </SafeAreaView>
+      <Separator />
+      <Button
+      title="Share this list"
+      color="#708A70"
+      onPress={() => onShare()}></Button>
       </LinearGradient>
     </View>
   )
