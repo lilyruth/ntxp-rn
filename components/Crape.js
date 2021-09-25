@@ -1,5 +1,5 @@
 import React  from 'react';
-import { Text, View, StyleSheet, Image, Button } from 'react-native';
+import { Text, View, StyleSheet, Image, Button, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as WebBrowser from 'expo-web-browser';
 import {  JuliusSansOne_400Regular } from '@expo-google-fonts/julius-sans-one';
@@ -7,6 +7,22 @@ import TREES from '../shared/treesInfo';
 import { useSelector, useDispatch } from 'react-redux';
 import { addPlantToFavorites, removePlantFromFavorites } from '../redux/features/favorites';
 import Separator from './Separator';
+
+const confirmationAdded = () => {
+ 
+ Alert.alert(
+   "Confirmation:",
+   "Added to shopping list."
+ )
+}
+
+const confirmationRemoved = () => {
+ 
+ Alert.alert(
+   "Confirmation:",
+   "Removed from shopping list."
+ )
+}
 
   
 
@@ -33,7 +49,7 @@ function Crape({props}) {
       title="Add to Shopping List"
       color='#6A006A'
       accessibilityLabel="Add Crape Myrtle to Shopping List"
-      onPress={() => { dispatch(addPlantToFavorites("Crape Myrtle"))} }
+      onPress={() => { dispatch(addPlantToFavorites("Crape Myrtle")); confirmationAdded()} }
       />  
   
   <Separator />
@@ -43,7 +59,7 @@ function Crape({props}) {
       color='#708A70'
       accessibilityLabel="Remove Crape Myrtle from Shopping List"
       style={styles.button}
-      onPress={() => { dispatch(removePlantFromFavorites("Crape Myrtle"))} }
+      onPress={() => { dispatch(removePlantFromFavorites("Crape Myrtle")); confirmationRemoved()} }
       />
 
   <Separator />

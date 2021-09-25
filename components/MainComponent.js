@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ScrollView, Platform, Image } from 'react-native';
-import { Home, Trees, Flowers, ShoppingList, Vitex, Creek, Crape, Magnolia, Redbud, Holly, Nurseries, Houseplants, TopGunRose, Quince } from './Plants';
+import { Home, Trees, Flowers, ShoppingList, Vitex, Creek, Crape, Magnolia, Redbud, Holly, Nurseries, Houseplants, TopGunRose, Quince,  Dragon, Firecracker, Hibiscus, Hydrangea, Petunias, Aglaonema, Pothos, Spider, Succulents, Tradescantia  } from './Plants';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Icon } from 'react-native-elements';
@@ -138,6 +138,134 @@ function TreesStackScreen() {
   )
 }
 
+const FlowersStack = createNativeStackNavigator();
+
+function FlowersStackScreen() {
+  return (
+    <FlowersStack.Navigator>
+      <FlowersStack.Screen 
+          name="Flowers" 
+          component={Flowers} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+      <FlowersStack.Screen 
+          name="Dragon" 
+          component={Dragon} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+       <FlowersStack.Screen 
+          name="Firecracker" 
+          component={Firecracker} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+      <FlowersStack.Screen 
+          name="Hibiscus" 
+          component={Hibiscus} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+       <FlowersStack.Screen 
+          name="Hydrangea" 
+          component={Hydrangea} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+       
+        <FlowersStack.Screen 
+          name="Petunias" 
+          component={Petunias} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+    </FlowersStack.Navigator>
+  )
+}
+
+const HouseplantsStack = createNativeStackNavigator();
+
+function HouseplantsStackScreen() {
+  return (
+    <HouseplantsStack.Navigator>
+      <HouseplantsStack.Screen 
+          name="Houseplants" 
+          component={Houseplants} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+      <HouseplantsStack.Screen 
+          name="Aglaonema" 
+          component={Aglaonema} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+      <HouseplantsStack.Screen 
+          name="Pothos" 
+          component={Pothos} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+       <HouseplantsStack.Screen 
+          name="Spider" 
+          component={Spider} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+      <HouseplantsStack.Screen 
+          name="Succulents" 
+          component={Succulents} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+       <HouseplantsStack.Screen 
+          name="Tradescantia" 
+          component={Tradescantia} 
+          options={{
+          headerTitle: props => <Logo {...props} />,
+          headerStyle: {
+          backgroundColor: '#D0DFD0',
+           },
+          }}/>
+       
+    </HouseplantsStack.Navigator>
+  )
+}
+
 export default function MainComponent() {
 
   
@@ -182,8 +310,8 @@ export default function MainComponent() {
 
           <Tab.Screen name="Home" component={HomeStackScreen} />
           <Tab.Screen name="Trees & Shrubs" component={TreesStackScreen} />
-          <Tab.Screen name="Flowers" component={Flowers} />
-          <Tab.Screen name="Houseplants" component={Houseplants} />
+          <Tab.Screen name="Flowers" component={FlowersStackScreen} />
+          <Tab.Screen name="Houseplants" component={HouseplantsStackScreen} />
           <Tab.Screen name="Nurseries" component={Nurseries} />
           <Tab.Screen name="Shopping List" component={ShoppingList} />
         </Tab.Navigator>

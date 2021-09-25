@@ -10,18 +10,49 @@ import { Card } from 'react-native-paper';
 
 export default function Nurseries() {
 
-  return(
-    <View>
-    <Text>Nurseries</Text>
-       <TouchableOpacity style={{ color: 'darkmagenta', width: '90%' }} onPress={() => WebBrowser.openBrowserAsync('https://www.wildflower.org/plants-main')}><Text style={styles.paragraph2}>The Lady Bird Johnson Wildflower Center is a valuable resource for any gardener. </Text></TouchableOpacity>
-    </View>
-  )
 
-}
-
-const styles = StyleSheet.create({ 
+    return(
+      <View style={styles.container}>
+        <LinearGradient
+          style={{height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center'}}
+          colors={['lavender', 'lavender', 'lavender','#C0CEC0']} >
+       <Text style={styles.title}>Local Nurseries</Text>
+     
+        </LinearGradient>
+      </View>
+    )
   
- paragraph2: {
+  }
+  
+  const styles = StyleSheet.create({
+   container: {
+    margin: 10,
+    height: '100%',
+    alignContent: 'center',
+    justifyContent: 'center'
+   },
+   title: {
+    fontFamily: 'JuliusSansOne_400Regular',
+    fontSize: 32,
+    marginTop: 20,
+    marginBottom: 20,
+  
+  },
+  list: {
+   flexDirection: 'row',
+   
+  }, 
+  textList: {
+   fontSize: 16, 
+   marginTop: 8,
+   marginBottom: 3,
+   padding: 3,
+   marginLeft: 20,
+   borderBottomWidth: 1,
+   borderBottomColor: '#708A70'
+  },
+
+  paragraph2: {
     alignSelf: 'center',
     borderRadius: 10,
     backgroundColor: '#D0DFD0',
@@ -37,4 +68,5 @@ const styles = StyleSheet.create({
     fontFamily: 'MontserratAlternates_400Regular',
 
   },
+  
 })

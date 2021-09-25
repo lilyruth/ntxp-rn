@@ -1,11 +1,27 @@
 import React  from 'react';
-import { Text, View, StyleSheet, Image, Button } from 'react-native';
+import { Text, View, StyleSheet, Image, Button, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {  JuliusSansOne_400Regular } from '@expo-google-fonts/julius-sans-one';
 import TREES from '../shared/treesInfo';
 import { useSelector, useDispatch } from 'react-redux';
 import { addPlantToFavorites, removePlantFromFavorites } from '../redux/features/favorites';
 import Separator from './Separator';
+
+const confirmationAdded = () => {
+ 
+ Alert.alert(
+   "Confirmation:",
+   "Added to shopping list."
+ )
+}
+
+const confirmationRemoved = () => {
+ 
+ Alert.alert(
+   "Confirmation:",
+   "Removed from shopping list."
+ )
+}
 
 function Creek({props}) {
 
@@ -30,7 +46,7 @@ function Creek({props}) {
       title="Add to Shopping List"
       color='#6A006A'
       accessibilityLabel="Add Creek Willow to Shopping List"
-      onPress={() => { dispatch(addPlantToFavorites("Creek Willow"))} }
+      onPress={() => { dispatch(addPlantToFavorites("Creek Willow")); confirmationAdded()} }
       />  
   
   <Separator />
@@ -39,8 +55,8 @@ function Creek({props}) {
       title="Remove from Shopping List"
       color='#708A70'
       accessibilityLabel="Remove Creek Willow from Shopping List"
-      style={styles.button}
-      onPress={() => { dispatch(removePlantFromFavorites("Creek Willow"))} }
+    
+      onPress={() => { dispatch(removePlantFromFavorites("Creek Willow")); confirmationRemoved()} }
       />
 
   <Separator />
