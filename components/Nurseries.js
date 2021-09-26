@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Linking, Image, ScrollView } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Text, View, StyleSheet, } from 'react-native';
+
 import { WebView } from 'react-native-webview';
 
 

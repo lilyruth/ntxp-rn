@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, ScrollView, Platform, Image } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import { Home, Trees, Flowers, ShoppingList, Vitex, Creek, Crape, Magnolia, Redbud, Holly, Nurseries, Houseplants, TopGunRose, Quince,  Dragon, Firecracker, Hibiscus, Hydrangea, Petunias, Aglaonema, Pothos, Spider, Succulents, Tradescantia  } from './Plants';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';

@@ -1,7 +1,6 @@
 import React  from 'react';
 import { Text, View, StyleSheet, Image, Button, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import * as WebBrowser from 'expo-web-browser';
 import {  JuliusSansOne_400Regular } from '@expo-google-fonts/julius-sans-one';
 import TREES from '../shared/treesInfo';
 import { useSelector, useDispatch } from 'react-redux';

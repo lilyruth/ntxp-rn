@@ -1,10 +1,6 @@
 import React, { useState, Component } from 'react';
-import { Text, View, StyleSheet, Linking, Image, ScrollView, Button } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
-import  TREES  from '../shared/treesInfo';
-import { Card } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Separator from './Separator';
